@@ -8,16 +8,53 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    .container-bg{
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      padding-top: 40px;
+      padding-right: 40px;
+      padding-bottom: 100px;
+      padding-left: 40px;
+      text-align: center;
+      width: 500px;
+      height: 400px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: auto;
+      margin-left: auto;
+      padding-bottom: 100px;
+    }
+
+    body{
+      background-image: url(https://external-preview.redd.it/ktmkx3okLgoILpfJPdqQrCHgM3Zfb9Uq3E759V1ZVKA.png?auto=webp&s=3fd5b17c3428f90f19660661a20382e5eb4bfce0);
+    }
+
+    .jumbotron{
+      padding-top: 0%;
+    }
+
+    label{
+      color: ghostwhite;
+    }
+
+    div#a{
+      background-color:gold;
+    }
+  </style>
 </head>
 
 <body>
-<div class="jumbotron text-center">
-  <div class="container">
-    <p>First Name: <%= fname %></p>
-	<p>Last Name: <%=lName %></p>
+<div class="jumbotron bg-white text-center">
+  <div id="a" class="container">
+    <p id="ghj" class="text-left">ระบบยื่นใบคำร้องออนไลน์</p>
    </div>
 </div>
 
+<div class="container-bg">
 <div class="container">
   <form>
     <div class="form-group">
@@ -31,8 +68,9 @@
     <div class="checkbox">
       <label><input type="checkbox"> Remember me</label>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn-default">Submit</button>
   </form>
+</div>
 </div>
 
 </body>
