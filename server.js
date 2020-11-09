@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var PORT  = process.env.PORT || 5000;
 
 var app = express();
+var obj;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -55,7 +56,7 @@ app.post('/auth', function(request ,response){
             var body = Buffer.concat(chunks);
             console.log(body.toString());
 
-            var obj = JSON.parse(body.toString());
+            obj = JSON.parse(body.toString());
             console.log(obj.status);
 
             if(obj.status == "FALSE"){
@@ -63,7 +64,7 @@ app.post('/auth', function(request ,response){
                 response.end();
             }else{
                 request.body = body.toString();
-                response.send("TRUE");
+                response.redirect("/main");
                 response.end();
             }
         });
@@ -82,6 +83,9 @@ app.post('/auth', function(request ,response){
     }
 });
 
+app.get('/main', function(req, res) {
+	res.render('main',{fname: obj.displayname_en});
+});
 
 /*var options = {
     'method': 'POST',
