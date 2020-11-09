@@ -30,10 +30,13 @@
     }
 
     body{
-      background-image: url(https://external-preview.redd.it/ktmkx3okLgoILpfJPdqQrCHgM3Zfb9Uq3E759V1ZVKA.png?auto=webp&s=3fd5b17c3428f90f19660661a20382e5eb4bfce0);
+      background-image: url(https://siamrath.co.th/files/img/20201019/4ff0fed2a82421082c8e778793c9416920ac5fd279d4a522f10505088f805af5.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .jumbotron{
+      background-color: white;
       padding-top: 0%;
     }
 
@@ -41,34 +44,35 @@
       color: ghostwhite;
     }
 
-    div#a{
-      background-color:gold;
+    img{
+      transform: translate(-90%, 30%);
     }
+
   </style>
 </head>
 
 <body>
-<div class="jumbotron bg-white text-center">
-  <div id="a" class="container">
-    <p id="ghj" class="text-left">ระบบยื่นใบคำร้องออนไลน์</p>
+<div class="jumbotron">
+  <div class="container">
+      <img src="https://tu.ac.th/uploads/media/logo/logo02.jpg" width="415" height="80">
    </div>
 </div>
 
 <div class="container-bg">
 <div class="container">
-  <form>
+  <form action="auth" method="POST">
     <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="email" class="form-control" id="email">
+      <label for="usn">Username:</label>
+      <input type="text" name="username" class="form-control" id="usn" required>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
+      <input type="password" name="password" class="form-control" id="pwd" required>
     </div>
     <div class="checkbox">
       <label><input type="checkbox"> Remember me</label>
     </div>
-    <button type="submit" class="btn-default">Submit</button>
+    <input type="submit">
   </form>
 </div>
 </div>
