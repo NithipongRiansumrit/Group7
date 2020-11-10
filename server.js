@@ -79,12 +79,10 @@ app.post('/auth', function(request ,response){
             }else{
                 request.body = body.toString();
 
-                if(obj.username == "6209680054"){ //staff check
+                if(obj.username == "6209680054"){ //staff main page
                     response.redirect("/inboxStaff");
-                }else if(obj.username == "6209610168"){ //student check
-                    response.redirect("/statusStu");
-                }else if(obj.user == "6209680070"){
-                    response.redirect('/stuform');
+                }else if(obj.username == "6209610168"){ //student main page
+                    response.redirect("/mainpageStudent");
                 }else{
                     response.redirect("/mainpage");
                 }
@@ -112,24 +110,24 @@ app.get('/logout', function(req, res){
 });
 
 app.get('/inboxStaff', function(req, res) {
-    if(ssn.username){
-        res.render('inboxForStaff');
-    }else{
-        res.redirect('/');
-    }
+    res.render('inboxForStaff');
     //res.render('inboxForStaff');
 });
 
-app.get('/statusStu', function(req, res) {
+app.get('/status', function(req, res) {
 	res.render('formStatusForStu');
 });
 
-app.get('/mainpage', function(req, res) {
-	res.render('mainpage');
+app.get('/mainpageStudent', function(req, res) {
+	res.render('mainStudent');
 });
 
 app.get('/stuform', function(req, res) {
 	res.render('formstd');
+});
+
+app.get('/mainpage', function(req, res) {
+	res.render('mainpage');
 });
 
 /*var options = {
