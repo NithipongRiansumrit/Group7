@@ -80,6 +80,8 @@ app.post('/auth', function(request ,response){
                     response.redirect("/inboxStaff");
                 }else if(obj.username == "6209610168"){ //student check
                     response.redirect("/statusStu");
+                }else{
+                    response.redirect("/mainpage");
                 }
                 response.end();
             }
@@ -110,6 +112,10 @@ app.get('/inboxStaff', function(req, res) {
 
 app.get('/statusStu', function(req, res) {
 	res.render('formStatusForStu');
+});
+
+app.get('/mainpage', function(req, res) {
+	res.render('mainpage');
 });
 
 /*var options = {
