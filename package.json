@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "express-passport-logout": "^0.1.0",
     "express-session": "^1.17.1",
-    "passport-http": "^0.3.0"
+    "passport-http": "^0.3.0",
+    "popup": "0.0.3"
   }
 }

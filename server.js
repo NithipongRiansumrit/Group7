@@ -41,7 +41,10 @@ app.get('/api', function (req, res) {
     res.send(queryParams);
 });
 
+var ssn;
 app.post('/auth', function(request ,response){
+    ssn = request.session;
+    ssn.username = request.body.username;
     var username = request.body.username;
     var password = request.body.password;
 
@@ -80,6 +83,8 @@ app.post('/auth', function(request ,response){
                     response.redirect("/inboxStaff");
                 }else if(obj.username == "6209610168"){ //student check
                     response.redirect("/statusStu");
+                }else if(obj.user == "6209680070"){
+                    response.redirect('/stuform');
                 }else{
                     response.redirect("/mainpage");
                 }
@@ -107,7 +112,12 @@ app.get('/logout', function(req, res){
 });
 
 app.get('/inboxStaff', function(req, res) {
-	res.render('inboxForStaff');
+    if(ssn.username){
+        res.render('inboxForStaff');
+    }else{
+        res.redirect('/');
+    }
+    //res.render('inboxForStaff');
 });
 
 app.get('/statusStu', function(req, res) {
@@ -116,6 +126,10 @@ app.get('/statusStu', function(req, res) {
 
 app.get('/mainpage', function(req, res) {
 	res.render('mainpage');
+});
+
+app.get('/stuform', function(req, res) {
+	res.render('formstd');
 });
 
 /*var options = {

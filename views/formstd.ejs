@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>สำนักงานทะเบียนนักศึกษา มหาวิทยาลัยธรรมศาสตร์</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+        </script>
+        
+        <style>
+        body{font-family: 'CordiaUPC' !important;}
+               
+        </style>
+      </head>
+    <body>
+        <font size="5">
+
+       <!-- HEARER -->
+          <img src=images/header.png  width="100%" height="100%"> 
+          
+    <!-- MENU1 -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <a class="navbar-brand" href="mainpagestd.html"><h3>HOME</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">PROFILE <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> แจ้งลงทะเบียนล่าช้า</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="formstd.html"><h5>เขียนใบคำร้อง</h5></a>
+                  <a class="dropdown-item" href="statusstd.html"><h5>ติดตามสถานะ</h5></a>
+                  <a class="dropdown-item" href="#"><h5></h5></a>
+                </div>
+              </li>
+              </ul>
+                <a class="btn btn-sm btn-outline-secondary" href="#"><font size="3">LOGOUT</font></a>
+            </div>
+          </div>
+        </nav>
+
+       <!-- MENU2 -->
+       <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2">
+          <br>
+            <ul class="list-group">          
+              <li class="list-group-item list-group-item-danger ">MENU </li>  
+              <a href="formstd.html" class="list-group-item list-group-item-action list-group-item-dark"> ใบคำร้องลงทะเบียนล่าช้า</a>
+              <a href="statusstd.html" class="list-group-item list-group-item-action list-group-item-dark">ติดตามสถานะ</a>
+              <a href="#" class="list-group-item list-group-item-action list-group-item-dark">อาจารย์ที่ปรึกษา</a>
+            </ul>
+            </div>
+            
+       <!-- RIGHT -->
+            <div class="col-sm" align="center">
+            <br>
+                <div class="alert alert-danger" role="alert">
+           <br>
+           <p><center><b>คำร้องนักศึกษา</b></center></p>
+           <form class="needs-validation" novalidate>
+             <div class="form-row">
+               <div class="col-md-4 mb-3">
+                 <label for="validationCustom01">เรียน</label>
+                 <input type="text" class="form-control" id="validationCustom01" required>
+             </div>
+       </div>
+           <div class="form-row">
+             <div class="col-md-4 smb-3">
+                 <label for="validationCustom02">เรื่อง</label>
+                 <input type="text" class="form-control" id="validationCustom02" required>
+               </div>
+             </div>
+            <br>
+     
+             <div class="form-row">
+               <div class="col-md-2 mb-2">
+                 <label for="validationCustom03">คำนำหน้า</label> <br>
+               <select class="custom-select" id="validationCustom03" required>
+                 <option selected disabled value="">Open this select menu</option>
+                 <option value="1">นาย</option>
+                 <option value="2">นางสาว</option>
+               </select>
+             </div>
+     
+               <div class="col-md-5 mb-2">
+                 <label for="validationCustom04">ชื่อ-นามสกุล</label>
+                 <input type="text" class="form-control" id="validationCustom04" required>
+             </div>
+     
+             <div class="col-md-3 mb-2">
+                 <label for="validationCustom05">เลขทะเบียน</label>
+                 <input type="text" class="form-control" id="validationCustom05" required>
+             </div>
+     
+             <div class="col-md-2 mb-2">
+               <label for="validationCustom06">ชั้นปีที่</label>
+               <select class="custom-select" id="validationCustom06" required>
+                 <option selected disabled value="">Open this select menu</option>
+                 <option value="freshman">ปี 1</option>
+                 <option value="sophomore">ปี 2</option>
+                 <option value="junior">ปี 3</option>
+                 <option value="senior">ปี 4</option>
+               </select>
+             </div>
+            
+             </div>
+     
+             <div class="form-row">
+               <div class="col-md-6 mb-3">
+                 <label for="validationCustom07">สาขาวิชา</label>
+                 <input type="text" class="form-control" id="validationCustom07" required>
+               </div>
+               <div class="col-md-3 mb-3">
+                 <label for="validationCustom08">ที่อยู่ที่ติดต่อได้เลขที่</label>
+                 <input type="text" class="form-control" id="validationCustom08" required>
+               </div>
+               <div class="col-md-3 mb-3">
+                 <label for="validationCustom09">แขวง/ตำบล</label>
+                 <input type="text" class="form-control" id="validationCustom09" required>
+               </div>
+             </div>
+     
+             <div class="form-row">
+               <div class="col-md-4 mb-4">
+                 <label for="validationCustom10">เขต/อำเภอ</label>
+                 <input type="text" class="form-control" id="validationCustom10" required>
+               </div>
+               <div class="col-md-4 mb-4">
+                 <label for="validationCustom11">จังหวัด</label>
+                 <input type="text" class="form-control" id="validationCustom11" required>
+               </div>
+               <div class="col-md-4 mb-4">
+                 <label for="validationCustom12">โทรศัพท์ติดต่อนักศึกษา</label>
+                 <input type="text" class="form-control" id="validationCustom12" required>
+               </div>
+             </div>
+             <p><b>ประสงค์จะยื่นคำร้องเรื่อง</b></p>
+     
+             <div class="form-row">
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" value="important" id="invalidCheck2" required>
+                 <label class="form-check-label" for="invalidCheck2">
+                   จดทะเบียนล่าช้า/เพิ่มล่าช้า 
+                 </label>
+               </div>
+             </div>
+     
+             <div class="form-row">
+               <div class="col-md-3 mb-3">
+                 <label for="validationCustom13">ภาคการศึกษาที่</label>
+                 <input type="text" class="form-control" id="validationCustom13" required>
+               </div>
+               <div class="col-md-0 mb-0">
+             <br>         
+             <label for="validationCustom13"><h1>/</h1></label>
+             </div>
+               <div class="col-md-4 mb-3">
+                 <label for="validationCustom14"><br></label>
+                 <input type="text" class="form-control" id="validationCustom14" required>
+             </div>
+             </div>
+     
+             <div class="form-row">
+               <div class="col-md-4 mb-3">
+                 <label for="validationCustom15">รหัสวิชา</label>
+                 <input type="text" class="form-control" id="validationCustom15" required>
+               </div>
+               <div class="col-md-4 mb-3">
+                 <label for="validationCustom15">ชื่อวิชา</label>
+                 <input type="text" class="form-control" id="validationCustom15" required>
+               </div>
+               <div class="col-md-4 mb-3">
+                 <label for="validationCustom15">Section</label>
+                 <input type="text" class="form-control" id="validationCustom15" required>
+               </div>
+             </div>
+     
+             <div class="form-row">
+             <form class="was-validated">
+               <div class="col-md-7 mb-3">
+                 <label for="validationTextarea">เหตุผลที่ยื่นคำร้องเนื่องจาก</label>
+                 <textarea class="form-control" id="validationTextarea" required></textarea>
+               </div>
+             </div>
+     
+             <div class="form-row">
+               <div class="col-md-4 mb-3">
+                 <p>แนบหลักฐานที่เกี่ยวข้องกับเหตุผลที่ยื่นคำร้อง</p>
+             <div class="custom-file mb-3">
+               <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+               <label class="custom-file-label" >Choose file...</label>
+             </div>
+             </div>
+             </div>
+     
+             <div class="form-group">
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                 <label class="form-check-label" for="invalidCheck">
+                   Agree to terms and conditions
+                 </label>
+                 <div class="invalid-feedback">
+                   You must agree before submitting.
+                 </div>
+               </div>
+             </div>
+             <button class="btn btn-primary" type="submit">Submit form</button>
+           </form>
+
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>       
+      
+      <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+
+       <!-- FOOTER -->
+       <hr class="featurette-divider">
+  <footer class="container">
+    <p class="float-right"><a href="formstd.html">BACK TO TOP</a></p>
+    <p>&copy; <a>GROUP7 CS264 THAMMASAT UNIVERSITY</a></p>
+  </footer>
+        </font>           
+    </body>
+</html>
