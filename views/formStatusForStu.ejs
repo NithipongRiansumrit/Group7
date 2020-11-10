@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>สำนักงานทะเบียนนักศึกษา มหาวิทยาลัยธรรมศาสตร์</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+        </script>
+        
+        <style>
+        body{font-family: 'CordiaUPC' !important;}
+               
+        </style>
+      </head>
+    <body>
+        <font size="5">
+
+       <!-- HEARER -->
+          <img src=images/header.png  width="100%" height="100%"> 
+          
+    <!-- MENU1 -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <a class="navbar-brand" href="mainpagestd.html"><h3>HOME</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">PROFILE <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> แจ้งลงทะเบียนล่าช้า</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="formstd.html"><h5>เขียนใบคำร้อง</h5></a>
+                  <a class="dropdown-item" href="statusstd.html"><h5>ติดตามสถานะ</h5></a>
+                  <a class="dropdown-item" href="#"><h5></h5></a>
+                </div>
+              </li>
+              </ul>
+                <a class="btn btn-sm btn-outline-secondary" href="#"><font size="3">LOGOUT</font></a>
+            </div>
+          </div>
+        </nav>
+
+       <!-- MENU2 -->
+       <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2">
+          <br>
+            <ul class="list-group">          
+              <li class="list-group-item list-group-item-danger ">MENU </li>  
+              <a href="formstd.html" class="list-group-item list-group-item-action list-group-item-dark"> ใบคำร้องลงทะเบียนล่าช้า</a>
+              <a href="statusstd.html" class="list-group-item list-group-item-action list-group-item-dark">ติดตามสถานะ</a>
+              <a href="#" class="list-group-item list-group-item-action list-group-item-dark">อาจารย์ที่ปรึกษา</a>
+            </ul>
+            </div>
+            
+       <!-- RIGHT -->
+            <div class="col-sm" align="center">
+            <br>
+                <div class="alert alert-secondary" role="alert">
+           <br>
+         
+                </div>
+             </div>       
+         </div>
+      </div>
+
+       <!-- FOOTER -->
+       <hr class="featurette-divider">
+  <footer class="container">
+    <p class="float-right"><a href="statusstd.html">BACK TO TOP</a></p>
+    <p>&copy; <a>GROUP7 CS264 THAMMASAT UNIVERSITY</a></p>
+  </footer>
+        </font>           
+    </body>
+</html>

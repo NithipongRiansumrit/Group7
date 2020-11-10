@@ -4,11 +4,22 @@ var path = require('path');
 var https = require('https');
 var http = require('http');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var logout = require('express-passport-logout');
+var passportHttp = require('passport-http');
 
 var PORT  = process.env.PORT || 5000;
 
 var app = express();
 var obj;
+
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+
+app.use(express.static( "views" ) );
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -17,7 +28,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('index', {fname: 'Atip', lName: 'Boonyong'});
+    res.render('login');
 });
 
 app.listen(PORT, function () {
@@ -64,7 +75,12 @@ app.post('/auth', function(request ,response){
                 response.end();
             }else{
                 request.body = body.toString();
-                response.redirect("/main");
+
+                if(obj.username == "6209680054"){ //staff check
+                    response.redirect("/inboxStaff");
+                }else if(obj.username == "6209610168"){ //student check
+                    response.redirect("/statusStu");
+                }
                 response.end();
             }
         });
@@ -83,8 +99,17 @@ app.post('/auth', function(request ,response){
     }
 });
 
-app.get('/main', function(req, res) {
-	res.render('main',{fname: obj.displayname_en});
+app.get('/logout', function(req, res){
+    req.session.destroy();
+    res.redirect('/');
+});
+
+app.get('/inboxStaff', function(req, res) {
+	res.render('inboxForStaff');
+});
+
+app.get('/statusStu', function(req, res) {
+	res.render('formStatusForStu');
 });
 
 /*var options = {
