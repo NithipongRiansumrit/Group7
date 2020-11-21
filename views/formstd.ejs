@@ -12,12 +12,12 @@
             $(document).ready(function () {
                 $('.dropdown-toggle').dropdown();
             });
-        </script>
+          </script>
         
         <style>
         body{font-family: 'CordiaUPC' !important;}
-               
         </style>
+
       </head>
     <body>
         <font size="5">
@@ -27,7 +27,7 @@
           
     <!-- MENU1 -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-          <a class="navbar-brand" href="mainpagestd.html"><h3>HOME</h1></a>
+          <a class="navbar-brand" href="/mainpageStudent"><h3>HOME</h1></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -40,8 +40,8 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> แจ้งลงทะเบียนล่าช้า</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="formstd.html"><h5>เขียนใบคำร้อง</h5></a>
-                  <a class="dropdown-item" href="statusstd.html"><h5>ติดตามสถานะ</h5></a>
+                  <a class="dropdown-item" href="/stuform"><h5>เขียนใบคำร้อง</h5></a>
+                  <a class="dropdown-item" href="/status"><h5>ติดตามสถานะ</h5></a>
                   <a class="dropdown-item" href="#"><h5></h5></a>
                 </div>
               </li>
@@ -69,50 +69,55 @@
             <br>
                 <div class="alert alert-danger" role="alert">
            <br>
+
            <p><center><b>คำร้องนักศึกษา</b></center></p>
-           <form class="needs-validation" novalidate>
+
+           <form action="/formstd2" id="form" class="needs-validation" method="POST" novalidate>
              <div class="form-row">
                <div class="col-md-4 mb-3">
-                 <label for="validationCustom01">เรียน</label>
-                 <input type="text" class="form-control" id="validationCustom01" required>
+                 <label for="to">เรื่อง</label>
+                 <input type="text" class="form-control" id="to" name="to" required>
              </div>
        </div>
            <div class="form-row">
              <div class="col-md-4 smb-3">
-                 <label for="validationCustom02">เรื่อง</label>
-                 <input type="text" class="form-control" id="validationCustom02" required>
+                 <label for="nameto">เรียน</label>
+                 <input type="text" class="form-control" id="nameto" name="nameto" required>
                </div>
              </div>
             <br>
      
              <div class="form-row">
                <div class="col-md-2 mb-2">
-                 <label for="validationCustom03">คำนำหน้า</label> <br>
-               <select class="custom-select" id="validationCustom03" required>
+                 <label for="title">คำนำหน้า</label> <br>
+               <select class="custom-select" id="title" name="title" required>
                  <option selected disabled value="">Open this select menu</option>
-                 <option value="1">นาย</option>
-                 <option value="2">นางสาว</option>
+                 <option value="นาย">นาย</option>
+                 <option value="นางสาว">นางสาว</option>
                </select>
              </div>
      
                <div class="col-md-5 mb-2">
-                 <label for="validationCustom04">ชื่อ-นามสกุล</label>
-                 <input type="text" class="form-control" id="validationCustom04" required>
+                 <label for="namelastname">ชื่อ-นามสกุล</label>
+                 <input type="text" class="form-control" id="namelastname" name="namelastname" required>
              </div>
      
              <div class="col-md-3 mb-2">
-                 <label for="validationCustom05">เลขทะเบียน</label>
-                 <input type="text" class="form-control" id="validationCustom05" required>
+                 <label for="idstd">เลขทะเบียน</label>
+                 <input type="text" class="form-control" id="idstd" name="idstd" required>
              </div>
      
              <div class="col-md-2 mb-2">
-               <label for="validationCustom06">ชั้นปีที่</label>
-               <select class="custom-select" id="validationCustom06" required>
+               <label for="classstd">ชั้นปีที่</label>
+               <select class="custom-select" id="classstd" name="classstd" required>
                  <option selected disabled value="">Open this select menu</option>
-                 <option value="freshman">ปี 1</option>
-                 <option value="sophomore">ปี 2</option>
-                 <option value="junior">ปี 3</option>
-                 <option value="senior">ปี 4</option>
+                 <option value="1">ปี 1</option>
+                 <option value="2">ปี 2</option>
+                 <option value="3">ปี 3</option>
+                 <option value="4">ปี 4</option>
+                 <option value="5">ปี 5</option>
+                 <option value="6">ปี 6</option>
+                 <option value="7">ปี 7</option>
                </select>
              </div>
             
@@ -120,31 +125,31 @@
      
              <div class="form-row">
                <div class="col-md-6 mb-3">
-                 <label for="validationCustom07">สาขาวิชา</label>
-                 <input type="text" class="form-control" id="validationCustom07" required>
+                 <label for="department">สาขาวิชา</label>
+                 <input type="text" class="form-control" id="department" name="department" required>
                </div>
                <div class="col-md-3 mb-3">
-                 <label for="validationCustom08">ที่อยู่ที่ติดต่อได้เลขที่</label>
-                 <input type="text" class="form-control" id="validationCustom08" required>
+                 <label for="address">ที่อยู่ที่ติดต่อได้เลขที่</label>
+                 <input type="text" class="form-control" id="address" name="address" required>
                </div>
                <div class="col-md-3 mb-3">
-                 <label for="validationCustom09">แขวง/ตำบล</label>
-                 <input type="text" class="form-control" id="validationCustom09" required>
+                 <label for="tumbon">แขวง/ตำบล</label>
+                 <input type="text" class="form-control" id="tumbon" name="tumbon" required>
                </div>
              </div>
      
              <div class="form-row">
                <div class="col-md-4 mb-4">
-                 <label for="validationCustom10">เขต/อำเภอ</label>
-                 <input type="text" class="form-control" id="validationCustom10" required>
+                 <label for="aumpor">เขต/อำเภอ</label>
+                 <input type="text" class="form-control" id="aumpor" name="aumpor" required>
                </div>
                <div class="col-md-4 mb-4">
-                 <label for="validationCustom11">จังหวัด</label>
-                 <input type="text" class="form-control" id="validationCustom11" required>
+                 <label for="city">จังหวัด</label>
+                 <input type="text" class="form-control" id="city" name="city" required>
                </div>
                <div class="col-md-4 mb-4">
-                 <label for="validationCustom12">โทรศัพท์ติดต่อนักศึกษา</label>
-                 <input type="text" class="form-control" id="validationCustom12" required>
+                 <label for="phonenumber">โทรศัพท์ติดต่อนักศึกษา</label>
+                 <input type="text" class="form-control" id="phonenumber" name="phonenumber" required>
                </div>
              </div>
              <p><b>ประสงค์จะยื่นคำร้องเรื่อง</b></p>
@@ -160,50 +165,50 @@
      
              <div class="form-row">
                <div class="col-md-3 mb-3">
-                 <label for="validationCustom13">ภาคการศึกษาที่</label>
-                 <input type="text" class="form-control" id="validationCustom13" required>
+                 <label for="semester1">ภาคการศึกษาที่</label>
+                 <input type="text" class="form-control" id="semester1" name="semester1" required>
                </div>
                <div class="col-md-0 mb-0">
              <br>         
              <label for="validationCustom13"><h1>/</h1></label>
              </div>
                <div class="col-md-4 mb-3">
-                 <label for="validationCustom14"><br></label>
-                 <input type="text" class="form-control" id="validationCustom14" required>
+                 <label for="semester2"><br></label>
+                 <input type="text" class="form-control" id="semester2" name="semester2" required>
              </div>
              </div>
      
              <div class="form-row">
                <div class="col-md-4 mb-3">
-                 <label for="validationCustom15">รหัสวิชา</label>
-                 <input type="text" class="form-control" id="validationCustom15" required>
+                 <label for="subjectnum">รหัสวิชา</label>
+                 <input type="text" class="form-control" id="subjectnum" name="subjectnum" required>
                </div>
                <div class="col-md-4 mb-3">
-                 <label for="validationCustom15">ชื่อวิชา</label>
-                 <input type="text" class="form-control" id="validationCustom15" required>
+                 <label for="subject">ชื่อวิชา</label>
+                 <input type="text" class="form-control" id="subject" name="subject" required>
                </div>
                <div class="col-md-4 mb-3">
-                 <label for="validationCustom15">Section</label>
-                 <input type="text" class="form-control" id="validationCustom15" required>
+                 <label for="section">Section</label>
+                 <input type="text" class="form-control" id="section" name="section" required>
                </div>
              </div>
      
              <div class="form-row">
              <form class="was-validated">
                <div class="col-md-7 mb-3">
-                 <label for="validationTextarea">เหตุผลที่ยื่นคำร้องเนื่องจาก</label>
-                 <textarea class="form-control" id="validationTextarea" required></textarea>
+                 <label for="reason">เหตุผลที่ยื่นคำร้องเนื่องจาก</label>
+                 <textarea class="form-control" id="reason" name="reason" required></textarea>
                </div>
              </div>
      
              <div class="form-row">
-               <div class="col-md-4 mb-3">
+               <div class="col-md-8 mb-3">
                  <p>แนบหลักฐานที่เกี่ยวข้องกับเหตุผลที่ยื่นคำร้อง</p>
-             <div class="custom-file mb-3">
-               <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-               <label class="custom-file-label" >Choose file...</label>
-             </div>
-             </div>
+                 <div class="btn btn-dark btn-lg float-left">
+                  <input type="file" id="file" name="file" required>
+                </div>
+                
+              </div>
              </div>
      
              <div class="form-group">
@@ -217,15 +222,66 @@
                  </div>
                </div>
              </div>
-             <button class="btn btn-primary" type="submit">Submit form</button>
-           </form>
-
-          </div>
-        </div>
-          </div>
-        </div>
-      </div>       
+             <button  class="btn btn-dark" type="submit">Submit form</button>
       
+          </div>
+        </div>
+          </div>
+        </form>
+        </div>
+      </div>   
+
+      <script>/*
+         let formstd = [];
+        const addform = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let detail = {
+                date: Date.now(),
+                to: document.getElementById('to').value,
+                nameto: document.getElementById('nameto').value,
+                title: document.getElementById('title').value,
+                namelastname: document.getElementById('namelastname').value,
+                idstd: document.getElementById('idstd').value,
+                class: document.getElementById('class').value,
+                department: document.getElementById('department').value,
+                address: document.getElementById('address').value,
+                tumbon: document.getElementById('tumbon').value,
+                aumpor: document.getElementById('aumpor').value,
+                city: document.getElementById('city').value,
+                phonenumber: document.getElementById('phonenumber').value,
+                semester1: document.getElementById('semester1').value,
+                semester2: document.getElementById('semester2').value,
+                subjectnum: document.getElementById('subjectnum').value,
+                subject: document.getElementById('subject').value,
+                section: document.getElementById('section').value,
+                reason: document.getElementById('reason').value,
+            }
+            formstd.push(detail);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {formstd} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(formstd, '\t', 2);
+
+            //saving to localStorage
+            localStorage.setItem('formstdlist', JSON.stringify(formstd) );
+        
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+          var el = document.getElementById('submitbtn');
+           if(el){
+           el.addEventListener('click', addform, false);
+          }
+        }
+        );*/
+
+      </script>
+
+
+
+
       <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
@@ -250,7 +306,7 @@
        <!-- FOOTER -->
        <hr class="featurette-divider">
   <footer class="container">
-    <p class="float-right"><a href="formstd.html">BACK TO TOP</a></p>
+    <p class="float-right"><a href="/stuform">BACK TO TOP</a></p>
     <p>&copy; <a>GROUP7 CS264 THAMMASAT UNIVERSITY</a></p>
   </footer>
         </font>           
