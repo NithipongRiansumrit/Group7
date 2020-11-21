@@ -7,6 +7,12 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var logout = require('express-passport-logout');
 var passportHttp = require('passport-http');
+const { urlencoded } = require('express');
+var bodyParser = require('body-parser');
+const { brotliDecompressSync } = require('zlib');
+const { stringify } = require('querystring');
+
+var urlencodedParser = bodyParser.urlencoded({extended: false})
 
 var PORT  = process.env.PORT || 5000;
 
@@ -81,10 +87,10 @@ app.post('/auth', function(request ,response){
 
                 if(obj.username == "6209680054"){ //staff main page
                     response.redirect("/inboxStaff");
-                }else if(obj.username == "6209610168"){ //student main page
-                    response.redirect("/mainpageStudent");
-                }else{
+                }else if(obj.username == "6209680070"){ 
                     response.redirect("/mainpage");
+                }else{//student main page
+                    response.redirect("/mainpageStudent");
                 }
                 response.end();
             }
@@ -129,6 +135,32 @@ app.get('/stuform', function(req, res) {
 app.get('/mainpage', function(req, res) {
 	res.render('mainpage');
 });
+
+
+app.post('/formstd2', urlencodedParser , function(req,res){
+    var detailform = {
+        'to' : req.body.to,
+        'nameto': req.body.nameto,
+        'title': req.body.title,
+        'namelastname': req.body.namelastname,
+        'idstd': req.body.idstd,
+        'classstd': req.body.class,
+        'department': req.body.department,
+        'address': req.body.address,
+        'tumbon': req.body.tumbon,
+        'aumpor': req.body.aumpor,
+        'city': req.body.city,
+        'phonenumber': req.body.phonenumber,
+        'semester1': req.body.semester1,
+        'semester2': req.body.semester2,
+        'subjectnum': req.body.subjectnum,
+        'subject': req.body.subject,
+        'section': req.body.section,
+        'reason': req.body.reason,
+    }
+    res.render('formstd2',detailform);
+    });
+
 
 /*var options = {
     'method': 'POST',
@@ -178,9 +210,7 @@ var req = https.request(options, function (res) {
 //})
 
 /*var postData =  "{\n\t\"UserName\":\"6209680055\",\n\t\"PassWord\":\"4409817425298\"\n}";
-
 var a = req.write(postData);
-
 req.end()*/
 
 //const options = {
