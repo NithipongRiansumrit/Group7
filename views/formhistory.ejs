@@ -52,7 +52,7 @@
                 </div>
               </li>
               </ul>
-                <a class="btn btn-sm btn-outline-secondary" href="/logout"><font size="3">LOGOUT</font></a>
+                <a class="btn btn-sm btn-outline-secondary" href="#"><font size="3">LOGOUT</font></a>
             </div>
           </div>
         </nav>
@@ -66,6 +66,7 @@
               <li class="list-group-item list-group-item-danger ">MENU </li>  
               <a href="/stuform" class="list-group-item list-group-item-action list-group-item-dark"> ใบคำร้องลงทะเบียนล่าช้า</a>
               <a href="/formhistory" class="list-group-item list-group-item-action list-group-item-dark">ประวัติใบคำร้อง</a>
+              <a href="/status" class="list-group-item list-group-item-action list-group-item-dark">ติดตามสถานะ</a>
               <a href="#" class="list-group-item list-group-item-action list-group-item-dark">อาจารย์ที่ปรึกษา</a>
             </ul>
             </div>
@@ -77,7 +78,7 @@
            <br>
 
            <p><center><b>คำร้องนักศึกษา</b></center></p>
-        <form action="/stuform" method="GET">
+        <form>
             <h3><b>เรื่อง </b> <%=to %></h3>
             <h3><b>เรียน</b> <%=nameto %></h3>
             <br>
@@ -94,11 +95,25 @@
             <h3><b>ประสงค์จะยื่นคำร้องเรื่อง</b></h3>
             <h4>จดทะเบียนล่าช้า/เพิ่มเติ่มล่าช้า</h4>
             <b>ภาคการศึกษาที่</b> <%=semester1 %>/<%=semester2 %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>รหัสวิชา</b> <%=subjectnum %> &nbsp;&nbsp;&nbsp;&nbsp;
-            <b>ชื่อวิชา</b> <%=subject %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>Section</b> <%=section %><br> 
+
+            <b>Section</b> <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="subjectnum"><b>รหัสวิชา</b></label>
+                <input type="text" class="form-control" id="subjectnum" name="subjectnum" required value=" <%=subjectnum %>">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="subject"><b>ชื่อวิชา</b></label>
+                <input type="text" class="form-control" id="subject" name="subject" required value=" <%=subject %>">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="section"><b>Section</b></label>
+                <input type="text" class="form-control" id="section" name="section" required value=" <%=section %>">
+              </div>
+            </div>
+           <br> 
+
             <b>เหตุผลที่ยื่นคำร้องเนื่องจาก</b> <%=reason %><br> 
-            หลักฐานที่เกี่ยวข้องกับเหตุผลที่ยื่นคำร้อง <%=file %>
+            หลักฐานที่เกี่ยวข้องกับเหตุผลที่ยื่นคำร้อง 
             <br><br>
             จึงเรียนมาเพื่อโปรดพิจารณาอนุมัติและดำเนินการต่อไปด้วย จักเป็นพระคุณยิ่ง<br><Br>
             <center><button  class="btn btn-dark" type="submit">Submit form</button></center>

@@ -27,7 +27,7 @@
           
         <!-- MENU1 -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-          <a class="navbar-brand" href="mainpagestaff.html"><h3>HOME</h1></a>
+          <a class="navbar-brand" href="/mainpage"><h3>HOME</h1></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -36,14 +36,11 @@
               <li class="nav-item active">
                 <a class="nav-link" href="#">PROFILE <span class="sr-only">(current)</span></a>
               </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> แจ้งลงทะเบียนล่าช้า</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="allform.html"><h5>ใบคำร้องทั้งหมด</h5></a>
-                </div>
-              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/inboxStaff">คำร้องทั้งหมด <span class="sr-only">(current)</span></a>
+                </li>
               </ul>
+          
               <!--<form action="logout" method="POST">-->
                 <a class="btn btn-sm btn-outline-secondary" href="/logout"><font size="3">LOGOUT</font></a>
               <!--</form>-->
@@ -57,17 +54,17 @@
            <div class="alert alert-secondary" role="alert">
             <div class="form-row">
                 <div class="col-md-6 mb-4">
-                ใบคำร้องทั้งหมด
+                <b>ใบคำร้องทั้งหมด</b><br>
+               <a href="/detailforms">วิชา CS264&nbsp;&nbsp;&nbsp;&nbsp;6209680070 พาณิภัค พันธ์โสดา </a><br>
+               <a href="/detailforms2">วิชา CS264&nbsp;&nbsp;&nbsp;&nbsp;6209610036 ติณณ์ณพล โชติพัชรโรจน์ </a>
                 </div>
-                <div class="col-md-3 mb-4">
-                    DATE
+                <div class="col-md-3 mb-3">
+                  <b>DATE</b>
                 </div>
-                <div class="col-md-3 mb-4">
-                STATUS
+                <div class="col-md-3 mb-3">
+                  <b>STATUS</b>
                 </div>
             </div>
-        <br>
-
         </div>
       </div>
 

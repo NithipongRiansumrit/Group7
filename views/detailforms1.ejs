@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>สำนักงานทะเบียนนักศึกษา มหาวิทยาลัยธรรมศาสตร์</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+        </script>
+        
+        <style>
+        body{font-family: 'CordiaUPC' !important;}
+               
+        </style>
+        
+      </head>
+    <body>
+        <font size="5">
+           
+       <!-- HEARER -->
+          <img src=images/header.png  width="100%" height="100%"> 
+          
+        <!-- MENU1 -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <a class="navbar-brand" href="/mainpage"><h3>HOME</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">PROFILE <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/inboxStaff">คำร้องทั้งหมด <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+                
+                </div>
+             
+                <a class="btn btn-sm btn-outline-secondary" href="/logout"><font size="3">LOGOUT</font></a>
+            </div>
+          </div>
+        </nav>
+
+
+        <!-- RIGHT -->
+        <div class="row"></div>
+          <div class="col-sm-8 offset-md-2">
+           <br>
+           <div class="alert alert-secondary" role="alert">
+           <center><h2><b>ใบคำร้องนักศึกษา</b></h2></center>
+           <p id="user"></p>
+           <p id="user3"></p>
+           <p id="user2"></p>
+
+           <script>
+            var s = '{"to" : "แจ้งลงทะเบียนล่าช้า", "nameto": "ผศ.ดร.ทรงศักดิ์ รองวิริยะพานิช","title": "นางสาว","namelastname": "พาณิภัค พันธ์โสดา","idstd": "6209680070","classstd": "2","department": "วิทยาการคอมพิวเตอร์"}';
+            var s2 = '{"phonenumber": "0888844444","semester1": "2","semester2": "2563","subjectnum": "CS264","subject": "Introduction to Software Engineering","section": "1","reason": "ป่วยเป็นโรคไข้หวัดใหญ่ ไม่สามารถลงทะเบียนได้","file": "reason.pdf"}';
+            var s3 = '{"address": "313","tumbon": "คลองหนึ่ง","aumpor": "คลองหลวง","city": "ปทุมธานี"}';
+           var obj = JSON.parse(s);
+           var obj2 = JSON.parse(s2);
+           var obj3 = JSON.parse(s3);
+           document.getElementById("user").innerHTML =
+           "<b>เรื่อง</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + obj.to + " "+"<br>" +
+           "<b>เรียน</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + obj.nameto + "<br><br>" +
+           "<b>ข้าพเจ้า</b> " + obj.title + " " + obj.namelastname +
+           "&nbsp;&nbsp;&nbsp;&nbsp;<b>เลขทะเบียน</b> "  + obj.idstd + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>ชั้นปีที่</b> " + obj.classstd + "  " + " &nbsp;&nbsp;&nbsp;&nbsp;<b>สาขาวิชา</b> " + obj.department;
+           document.getElementById("user3").innerHTML =
+           "<b>ที่อยู่ที่ติดต่อได้เลขที่</b> "  + obj3.address + "  " + " <b>&nbsp;&nbsp;&nbsp;&nbsp;แขวง/ตำบล</b> " + obj3.tumbon + "  " + " <b>&nbsp;&nbsp;&nbsp;&nbsp;เขต/อำเภอ</b> " + obj3.aumpor + "  " + 
+           " <b>&nbsp;&nbsp;&nbsp;&nbsp;จังหวัด</b> " + obj3.city;
+        document.getElementById("user2").innerHTML =
+           "<b>โทรศัพท์ติดต่อนักศึกษา</b> "  + obj2.phonenumber + "<br>" + 
+           "<b>ประสงค์จะยื่นคำร้องเรื่อง จดทะเบียนล่าช้า/เพิ่มเติ่มล่าช้า</b> "  + "<br>" + 
+           "<b>ภาคการศึกษาที่</b> " + obj2.semester1 + " / " + obj2.semester2 + "<br>" + 
+           "<b>รหัสวิชา</b> " + obj2.subjectnum + "  " + "<b>&nbsp;&nbsp;&nbsp;&nbsp;ชื่อวิชา</b> " + obj2.subject + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Section</b> " + obj2.section + "<br>" +
+           "<b>เหตุผลที่ยื่นคำร้องเนื่องจาก</b> "  + obj2.reason  + "<br>" +
+            "<b>หลักฐานที่เกี่ยวข้องกับเหตุผลที่ยื่นคำร้อง</b> " + obj2.file + "<br>" + "<br>" +
+              "จึงเรียนมาเพื่อโปรดพิจารณาอนุมัติและดำเนินการต่อไปด้วย จักเป็นพระคุณยิ่ง";
+           </script>
+           </div>
+           <center><div class="col-sm-5">
+            <input class="btn btn-outline-success btn-lg" type="submit" value="อนุมัติ">&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn btn-outline-danger btn-lg" type="submit" value="ไม่อนุมัติ">
+
+        
+        </div>      </center>
+        </div>
+        </div>
+
+      <!-- FOOTER -->
+      <hr class="featurette-divider">
+      <footer class="container">
+        <p class="float-right"><a href="/mainpage">BACK TO TOP</a></p>
+        <p>&copy; <a>GROUP7 CS264 THAMMASAT UNIVERSITY</a></p>
+      </footer>
+        </font>           
+    </body>
+</html>
