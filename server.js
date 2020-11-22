@@ -80,14 +80,15 @@ app.post('/auth', function(request ,response){
             console.log(obj.status);
 
             if(obj.status == "FALSE"){
-                response.send("FALSE");
+                //response.send("FALSE");
+                response.redirect("/")
                 response.end();
             }else{
                 request.body = body.toString();
 
                 if(obj.username == "6209680054"){ //staff main page
                     response.redirect("/inboxStaff");
-                }else if(obj.username == "6209680070"){ 
+                }else if(obj.username == "6209680070"){
                     response.redirect("/mainpage");
                 }else{//student main page
                     response.redirect("/mainpageStudent");
