@@ -11,7 +11,6 @@ const { urlencoded } = require('express');
 var bodyParser = require('body-parser');
 const { brotliDecompressSync } = require('zlib');
 const { stringify } = require('querystring');
-
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
 var PORT  = process.env.PORT || 5000;
@@ -34,7 +33,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('login');
+    res.render('login',{fname: 'Atip', lName: 'Boonyong'});
+
 });
 
 app.listen(PORT, function () {
@@ -85,10 +85,11 @@ app.post('/auth', function(request ,response){
                 response.end();
             }else{
                 request.body = body.toString();
+                response
 
                 if(obj.username == "6209680054"){ //staff main page
                     response.redirect("/inboxStaff");
-                }else if(obj.username == "6209680070"){
+                }else if(obj.username == "6209610036"){
                     response.redirect("/mainpage");
                 }else{//student main page
                     response.redirect("/mainpageStudent");
@@ -137,31 +138,69 @@ app.get('/mainpage', function(req, res) {
 	res.render('mainpage');
 });
 
+app.get('/formhistory', function(req, res) {
+	res.render('formhistory');
+});
 
+var detailform= new Object();
 app.post('/formstd2', urlencodedParser , function(req,res){
-    var detailform = {
-        'to' : req.body.to,
-        'nameto': req.body.nameto,
-        'title': req.body.title,
-        'namelastname': req.body.namelastname,
-        'idstd': req.body.idstd,
-        'classstd': req.body.class,
-        'department': req.body.department,
-        'address': req.body.address,
-        'tumbon': req.body.tumbon,
-        'aumpor': req.body.aumpor,
-        'city': req.body.city,
-        'phonenumber': req.body.phonenumber,
-        'semester1': req.body.semester1,
-        'semester2': req.body.semester2,
-        'subjectnum': req.body.subjectnum,
-        'subject': req.body.subject,
-        'section': req.body.section,
-        'reason': req.body.reason,
+    detailform = {
+    'to' : req.body.to,
+    'nameto': req.body.nameto,
+    'title': req.body.title,
+    'namelastname': req.body.namelastname,
+    'idstd': req.body.idstd,
+    'classstd': req.body.classstd,
+    'department': req.body.department,
+    'address': req.body.address,
+    'tumbon': req.body.tumbon,
+    'aumpor': req.body.aumpor,
+    'city': req.body.city,
+    'phonenumber': req.body.phonenumber,
+    'semester1': req.body.semester1,
+    'semester2': req.body.semester2,
+    'subjectnum': req.body.subjectnum,
+    'subject': req.body.subject,
+    'section': req.body.section,
+    'reason': req.body.reason,
     }
     res.render('formstd2',detailform);
+    }
+    );
+
+
+app.post('/formhistory', urlencodedParser , function(req,res){
+    detailform = {
+    'to' : req.body.to,
+    'nameto': req.body.nameto,
+    'title': req.body.title,
+    'namelastname': req.body.namelastname,
+    'idstd': req.body.idstd,
+    'classstd': req.body.classstd,
+    'department': req.body.department,
+    'address': req.body.address,
+    'tumbon': req.body.tumbon,
+    'aumpor': req.body.aumpor,
+    'city': req.body.city,
+    'phonenumber': req.body.phonenumber,
+    'semester1': req.body.semester1,
+    'semester2': req.body.semester2,
+    'subjectnum': req.body.subjectnum,
+    'subject': req.body.subject,
+    'section': req.body.section,
+    'reason': req.body.reason,
+    'file': req.body.file
+    }
+    res.render('formhistory',detailform);
     });
 
+    
+    app.get('/detailforms' , urlencodedParser ,function(req,res){    
+        res.render('detailforms1');
+    });
+    app.get('/detailforms2' , urlencodedParser ,function(req,res){    
+        res.render('detailforms2');
+    });
 
 /*var options = {
     'method': 'POST',
