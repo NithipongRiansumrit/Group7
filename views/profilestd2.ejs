@@ -8,20 +8,17 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-          <!-- This is what you need -->
-      <script src="dist/sweetalert.js"></script>
-      <link rel="stylesheet" href="dist/sweetalert.css">
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
         <script>
             $(document).ready(function () {
                 $('.dropdown-toggle').dropdown();
             });
+            
           </script>
         
         <style>
         body{font-family: 'CordiaUPC' !important;}
+        p{ 
+	word-spacing:30px;}
         </style>
 
       </head>
@@ -48,7 +45,6 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="/stuform"><h5>เขียนใบคำร้อง</h5></a>
                   <a class="dropdown-item" href="/status"><h5>ติดตามสถานะ</h5></a>
-                  <a class="dropdown-item" href="#"><h5></h5></a>
                 </div>
               </li>
               </ul>
@@ -70,47 +66,36 @@
             </div>
             
        <!-- RIGHT -->
-            <div class="col-sm">
+            <div class="col-sm-10" >
             <br>
                 <div class="alert alert-danger" role="alert">
-           <br>
+                 <p> <center>
+                    <img src="https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&Status=10" width="15%" height="15%"><br><br></center>
+                    <h2><b>ข้อมูลนักศึกษา</b></h2>
+                    <b>ชื่อ-นามสกุล</b> <%=displayname_th %> <%=displayname_en %><br>
+                    <b>เลขทะเบียน</b> <%=username %><br>
+                    <b>คณะ</b> <%=faculty %><br>
+                    <b>สาขาวิชา</b> <%=department %><br>
 
-           <p><center><b>คำร้องนักศึกษา</b></center></p>
-        <form action="/stuform" method="GET">
-            <h3><b>เรื่อง </b> <%=to %></h3>
-            <h3><b>เรียน</b> <%=nameto %></h3>
-            <br>
-            <p style="text-indent: 2.5em;"> <b>ข้าพเจ้า</b> <%=title %> <%=namelastname %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>เลขทะเบียน</b> <%=idstd %> &nbsp;&nbsp;&nbsp;&nbsp;
-            <b>ชั้นปีที่</b> <%=classstd %> &nbsp;&nbsp;&nbsp;&nbsp;
-            <b>สาขาวิชา</b> <%=department %> &nbsp;&nbsp;&nbsp;&nbsp;<br>
-            <b>ที่อยู่ที่ติดต่อได้เลขที่</b> <%=address %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>แขวง/ตำบล</b> <%=tumbon %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>เขต/อำเภอ</b> <%=aumpor %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>จังหวัด</b> <%=city %><br>
-            <b>โทรศัพท์ติดต่อนักศึกษา</b> <%=phonenumber %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <br><br>
-            <h3><b>ประสงค์จะยื่นคำร้องเรื่อง</b></h3>
-            <h4>จดทะเบียนล่าช้า/เพิ่มเติ่มล่าช้า</h4>
-            <b>ภาคการศึกษาที่</b> <%=semester1 %>/<%=semester2 %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>รหัสวิชา</b> <%=subjectnum %> &nbsp;&nbsp;&nbsp;&nbsp;
-            <b>ชื่อวิชา</b> <%=subject %>&nbsp;&nbsp;&nbsp;&nbsp;
-            <b>Section</b> <%=section %><br> 
-            <b>เหตุผลที่ยื่นคำร้องเนื่องจาก</b> <%=reason %><br> 
-            หลักฐานที่เกี่ยวข้องกับเหตุผลที่ยื่นคำร้อง 
-            <br><br>
-            จึงเรียนมาเพื่อโปรดพิจารณาอนุมัติและดำเนินการต่อไปด้วย จักเป็นพระคุณยิ่ง<br><Br>
-            <center><button  class="btn btn-dark" type="submit">Submit form</button></center>
-        </p>
-        </form>
-        
+                    <br>
+                    <h2><b>ช่องทางการติดต่อ</b></h2>
+                    <b>E-mail</b> <%=email %>
+                    <form>
+                    <b>เบอร์โทร</b> <%=phonenum %>
+            
+                    <br>
+                    <label for="reason"><b>ที่อยู่ที่ติดต่อได้</b></label>
+                    <div class="col-md-6 mb">
+                      <textarea class="form-control" id="reason" name="reason" required></textarea><br>
+                    <button  class="btn btn-success btn-lg" type="submit">save</button></div>
+                    
+
+                    </form>
+                  </p>
+           </div>
           </div>
         </div>
-        </div>
-      </div>   
-</div>
-
-
+      </div>  
 
       <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -136,7 +121,7 @@
        <!-- FOOTER -->
        <hr class="featurette-divider">
   <footer class="container">
-    <p class="float-right"><a href="/formstd2">BACK TO TOP</a></p>
+    <p class="float-right"><a href="/stuform">BACK TO TOP</a></p>
     <p>&copy; <a>GROUP7 CS264 THAMMASAT UNIVERSITY</a></p>
   </footer>
         </font>           
